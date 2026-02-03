@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcano Software Inc. - Software Consulting & AI Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-canvas-default: #0d1117;
+            --color-canvas-subtle: #161b22;
+            --color-border-default: #30363d;
+            --color-border-subtle: #21262d;
+            --color-fg-default: #c9d1d9;
+            --color-fg-muted: #8b949e;
+            --color-accent-fg: #58a6ff;
+            --color-success-fg: #3fb950;
+        }
+
+        * {
+            color-scheme: dark;
+        }
+
+        body {
+            background-color: var(--color-canvas-default);
+            color: var(--color-fg-default);
+        }
+
+        .bg-canvas-default {
+            background-color: var(--color-canvas-default);
+        }
+
+        .bg-canvas-subtle {
+            background-color: var(--color-canvas-subtle);
+        }
+
+        .border-subtle {
+            border-color: var(--color-border-subtle);
+        }
+
+        .border-default {
+            border-color: var(--color-border-default);
+        }
+
+        .text-muted {
+            color: var(--color-fg-muted);
+        }
+
+        .text-accent {
+            color: var(--color-accent-fg);
+        }
+
+        .btn-primary {
+            background-color: var(--color-success-fg);
+            color: #0d1117;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #26843b;
+        }
+
+        .card-subtle {
+            background-color: var(--color-canvas-subtle);
+            border: 1px solid var(--color-border-subtle);
+            border-radius: 0.375rem;
+            padding: 1.5rem;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card-subtle:hover {
+            background-color: var(--color-canvas-default);
+            border-color: var(--color-border-default);
+        }
+
+        .nav-link {
+            color: var(--color-fg-muted);
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: var(--color-fg-default);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-success-fg);
+        }
+
+        .privacy-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .privacy-section.visible {
+            max-height: 2000px;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--color-canvas-subtle) 0%, var(--color-canvas-default) 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-canvas-default text-fg-default">
+    <!-- Navigation -->
+    <nav class="border-b border-default sticky top-0 z-50 bg-canvas-default bg-opacity-95 backdrop-blur">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="logo">🌋 Volcano Software</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#docs" class="nav-link">Docs</a>
+                <a href="#privacy-toggle" class="nav-link">Privacy</a>
+            </div>
+            <button class="md:hidden text-accent">Menu</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 md:py-32 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Building the future of Software, AI—one commit at a time.
+            </h1>
+            <p class="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto">
+                Enterprise software consulting, cutting-edge app development, and intelligent AI integrations. We
+                transform your vision into scalable, secure solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary">Get Started</button>
+                <button class="px-6 py-3 rounded border border-default text-accent hover:bg-canvas-subtle transition">
+                    View Documentation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 md:py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Volcano Software</h2>
+                <p class="text-lg text-muted">Delivering excellence through proven practices and cutting-edge
+                    technology.</p>
+            </div>
+
+            <!-- Feature Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Card 1: Open Source Integrity -->
+                <div class="card-subtle">
+                    <div class="mb-4">
+                        <div
+                            class="inline-flex items-center justify-center w-12 h-12 rounded bg-canvas-default border border-default">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Open Source Integrity</h3>
+                    <p class="text-muted mb-4">
+                        We believe in transparent, community-driven development. Our solutions are built with open
+                        standards and collaborative principles, ensuring your business isn't locked into proprietary
+                        black boxes.
+                    </p>
+                    <ul class="text-sm text-muted space-y-2">
+                        <li>✓ Transparent code practices</li>
+                        <li>✓ Community collaboration</li>
+                        <li>✓ Standards-based architecture</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Enterprise-Grade Security -->
+                <div class="card-subtle">
+                    <div class="mb-4">
+                        <div
+                            class="inline-flex items-center justify-center w-12 h-12 rounded bg-canvas-default border border-default">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Enterprise-Grade Security</h3>
+                    <p class="text-muted mb-4">
+                        Your data is our responsibility. We implement end-to-end encryption, multi-factor
+                        authentication, and compliance with SOC 2, GDPR, and industry-specific standards to keep your
+                        systems fortified.
+                    </p>
+                    <ul class="text-sm text-muted space-y-2">
+                        <li>✓ End-to-end encryption</li>
+                        <li>✓ SOC 2 & GDPR compliant</li>
+                        <li>✓ Zero-trust architecture</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Developer First -->
+                <div class="card-subtle">
+                    <div class="mb-4">
+                        <div
+                            class="inline-flex items-center justify-center w-12 h-12 rounded bg-canvas-default border border-default">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Developer First</h3>
+                    <p class="text-muted mb-4">
+                        Powerful APIs, comprehensive SDKs, and extensive documentation make integration seamless. Our
+                        platforms are designed by developers, for developers—minimal friction, maximum productivity.
+                    </p>
+                    <ul class="text-sm text-muted space-y-2">
+                        <li>✓ RESTful & GraphQL APIs</li>
+                        <li>✓ Multi-language SDKs</li>
+                        <li>✓ Interactive API explorer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Content Grid -->
+            <div class="border-t border-subtle pt-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">Our Services</h3>
+                        <ul class="space-y-3 text-muted">
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">→</span>
+                                <div>
+                                    <strong class="text-fg-default">Software Consulting</strong>
+                                    <p class="text-sm">Strategic guidance for your technology roadmap</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">→</span>
+                                <div>
+                                    <strong class="text-fg-default">App Development</strong>
+                                    <p class="text-sm">Custom applications built to scale and perform</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">→</span>
+                                <div>
+                                    <strong class="text-fg-default">AI Integrations</strong>
+                                    <p class="text-sm">Intelligent automation and machine learning solutions</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">Why We're Different</h3>
+                        <ul class="space-y-3 text-muted">
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">→</span>
+                                <div>
+                                    <strong class="text-fg-default">Industry Expertise</strong>
+                                    <p class="text-sm">Years of experience across fintech, healthcare, and enterprise
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">→</span>
+                                <div>
+                                    <strong class="text-fg-default">Agile Methodology</strong>
+                                    <p class="text-sm">Rapid iterations and continuous delivery</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">→</span>
+                                <div>
+                                    <strong class="text-fg-default">Post-Launch Support</strong>
+                                    <p class="text-sm">Dedicated support and optimization beyond go-live</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Docs Section (Hidden until linked) -->
+    <section id="docs" class="py-20 md:py-28 px-6 bg-canvas-subtle border-t border-subtle">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Developer Documentation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="#" class="card-subtle group">
+                    <h3 class="text-lg font-semibold mb-2 group-hover:text-accent">Getting Started Guide</h3>
+                    <p class="text-muted text-sm">Set up your first project in minutes with our comprehensive starter
+                        guide.</p>
+                </a>
+                <a href="#" class="card-subtle group">
+                    <h3 class="text-lg font-semibold mb-2 group-hover:text-accent">API Reference</h3>
+                    <p class="text-muted text-sm">Complete API documentation with examples in multiple programming
+                        languages.</p>
+                </a>
+                <a href="#" class="card-subtle group">
+                    <h3 class="text-lg font-semibold mb-2 group-hover:text-accent">Integration Guides</h3>
+                    <p class="text-muted text-sm">Step-by-step tutorials for integrating with popular platforms and
+                        services.</p>
+                </a>
+                <a href="#" class="card-subtle group">
+                    <h3 class="text-lg font-semibold mb-2 group-hover:text-accent">Support & Community</h3>
+                    <p class="text-muted text-sm">Connect with our developer community and get support from our expert
+                        team.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy" class="py-20 md:py-28 px-6 border-t border-subtle">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold">Privacy Policy</h2>
+                <button id="privacy-toggle" class="btn-primary" onclick="togglePrivacy()">
+                    Show Details
+                </button>
+            </div>
+
+            <div id="privacy-content" class="privacy-section">
+                <div class="bg-canvas-subtle border border-subtle rounded p-8 space-y-8">
+                    <!-- Data Collection -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">1. Data Collection</h3>
+                        <p class="text-muted mb-4">
+                            We collect information necessary to provide and improve our services:
+                        </p>
+                        <ul class="space-y-2 text-muted list-disc list-inside">
+                            <li><strong>Account Information:</strong> Name, email, organization, and billing details
+                                when you sign up for our services.</li>
+                            <li><strong>Usage Data:</strong> API calls, feature interactions, and service performance
+                                metrics to improve our platform.</li>
+                            <li><strong>Device Information:</strong> IP address, browser type, device OS, and
+                                approximate location for security and analytics purposes.</li>
+                            <li><strong>Communication Data:</strong> Messages, support tickets, and feedback you share
+                                with our team.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Usage of Information -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">2. Usage of Information</h3>
+                        <p class="text-muted mb-4">
+                            We use the information we collect for the following purposes:
+                        </p>
+                        <ul class="space-y-2 text-muted list-disc list-inside">
+                            <li><strong>Service Delivery:</strong> To provide, maintain, and improve our software
+                                consulting and AI integration services.</li>
+                            <li><strong>Security:</strong> To detect, prevent, and address fraud, abuse, and security
+                                incidents.</li>
+                            <li><strong>Communication:</strong> To send service-related announcements and respond to
+                                your inquiries.</li>
+                            <li><strong>Analytics:</strong> To understand usage patterns and optimize user experience.
+                            </li>
+                            <li><strong>Compliance:</strong> To meet legal obligations and enforce our Terms of Service.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Security -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">3. Data Security</h3>
+                        <p class="text-muted mb-4">
+                            We implement industry-leading security measures to protect your information:
+                        </p>
+                        <ul class="space-y-2 text-muted list-disc list-inside">
+                            <li>End-to-end encryption for data in transit and at rest</li>
+                            <li>Regular security audits and penetration testing</li>
+                            <li>Multi-factor authentication and role-based access controls</li>
+                            <li>Compliance with SOC 2 Type II, GDPR, and HIPAA standards</li>
+                            <li>Dedicated security incident response team</li>
+                        </ul>
+                    </div>
+
+                    <!-- User Rights -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">4. Your Rights</h3>
+                        <p class="text-muted mb-4">
+                            Depending on your location, you have certain rights regarding your personal data:
+                        </p>
+                        <ul class="space-y-2 text-muted list-disc list-inside">
+                            <li><strong>Right to Access:</strong> Request a copy of your personal data at any time.</li>
+                            <li><strong>Right to Correction:</strong> Update or correct inaccurate information.</li>
+                            <li><strong>Right to Deletion:</strong> Request deletion of your data, subject to legal
+                                retention obligations.</li>
+                            <li><strong>Right to Portability:</strong> Export your data in a structured,
+                                machine-readable format.</li>
+                            <li><strong>Right to Opt-Out:</strong> Opt out of marketing communications and optional data
+                                processing.</li>
+                            <li><strong>Right to Withdraw Consent:</strong> Withdraw consent for specific data
+                                processing activities.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Retention -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">5. Data Retention</h3>
+                        <p class="text-muted">
+                            We retain your personal data only for as long as necessary to provide our services and
+                            fulfill the purposes outlined in this policy. Specific retention periods depend on the data
+                            type and applicable legal requirements. You can request deletion of your data at any time,
+                            except where we have a legal obligation to retain it. Account data is retained for 90 days
+                            following deletion for recovery purposes.
+                        </p>
+                    </div>
+
+                    <!-- Third-Party Sharing -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">6. Third-Party Information Sharing</h3>
+                        <p class="text-muted mb-4">
+                            We do not sell your personal data. We may share information with:
+                        </p>
+                        <ul class="space-y-2 text-muted list-disc list-inside">
+                            <li>Service providers (hosting, payment processing, analytics) under strict confidentiality
+                                agreements</li>
+                            <li>Legal authorities when required by law or to protect our rights</li>
+                            <li>Business partners (only with your explicit consent)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cookies -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">7. Cookies and Tracking</h3>
+                        <p class="text-muted">
+                            We use cookies and similar tracking technologies to enhance your experience, remember
+                            preferences, and gather analytics data. Most browsers allow you to decline cookies, but this
+                            may limit certain features. We only use strictly necessary cookies by default and require
+                            your consent for analytics and marketing cookies.
+                        </p>
+                    </div>
+
+                    <!-- Policy Updates -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">8. Policy Updates</h3>
+                        <p class="text-muted mb-4">
+                            We may update this privacy policy to reflect changes in our practices or for other
+                            operational, legal, or regulatory reasons. Material changes will be communicated via email
+                            to registered accounts. Continued use of our services following notification of changes
+                            constitutes your acceptance of the updated policy.
+                        </p>
+                        <p class="text-muted">
+                            <strong>Last Updated:</strong> February 2, 2026
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">9. Contact Us</h3>
+                        <p class="text-muted mb-2">
+                            For privacy-related inquiries, data access requests, or to exercise your rights, contact us
+                            at:
+                        </p>
+                        <p class="text-muted">
+                            <strong>Email:</strong> privacy@volcanosoftware.com<br>
+                            <strong>Address:</strong> Volcano Software Inc., Software Innovation Hub, Tech City<br>
+                            <strong>Data Protection Officer:</strong> dpo@volcanosoftware.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-subtle bg-canvas-subtle py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="logo mb-4">🌋 Volcano</div>
+                    <p class="text-muted text-sm">Building enterprise software with integrity and excellence.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-muted text-sm">
+                        <li><a href="#" class="nav-link">Features</a></li>
+                        <li><a href="#" class="nav-link">Pricing</a></li>
+                        <li><a href="#" class="nav-link">Status</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Developers</h4>
+                    <ul class="space-y-2 text-muted text-sm">
+                        <li><a href="#docs" class="nav-link">Documentation</a></li>
+                        <li><a href="#" class="nav-link">API Reference</a></li>
+                        <li><a href="#" class="nav-link">SDKs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-muted text-sm">
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#privacy-toggle" class="nav-link">Privacy</a></li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-subtle pt-8 flex flex-col md:flex-row justify-between items-center text-muted text-sm">
+                <p>&copy; 2026 Volcano Software Inc. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="nav-link">Terms of Service</a>
+                    <a href="#privacy-toggle" class="nav-link" onclick="togglePrivacy()">Privacy Policy</a>
+                    <a href="#" class="nav-link">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function togglePrivacy() {
+            const privacyContent = document.getElementById('privacy-content');
+            const toggleButton = document.getElementById('privacy-toggle');
+
+            privacyContent.classList.toggle('visible');
+
+            if (privacyContent.classList.contains('visible')) {
+                toggleButton.textContent = 'Hide Details';
+                // Scroll to privacy section
+                document.getElementById('privacy').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                toggleButton.textContent = 'Show Details';
+            }
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#privacy-toggle') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
