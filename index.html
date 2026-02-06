@@ -635,14 +635,36 @@
                         </p>
                     </div>
 
+                    <!-- Account Deletion -->
+                    <div id="deletion">
+                        <h3 class="text-2xl font-semibold mb-4">9. Account Deletion</h3>
+                        <p class="text-muted mb-4">
+                            You have the right to request deletion of your account and associated personal data at any
+                            time. To submit an account deletion request:
+                        </p>
+                        <ul class="space-y-2 text-muted list-disc list-inside">
+                            <li>Send a deletion request email to <strong>volcanosoftware.help@gmail.com</strong> with
+                                your account details</li>
+                            <li>Include your account id / email address, and app name in the request</li>
+                            <li>We will verify your identity and process the request within 30 days</li>
+                            <li>Upon deletion, all personal data will be removed except where legally required to retain
+                            </li>
+                            <li>Account data is retained for 90 days following deletion for recovery purposes</li>
+                        </ul>
+                        <p class="text-muted mt-4">
+                            For data access requests made before deletion, you can request a copy of your data in a
+                            portable format by contacting us at the email address above.
+                        </p>
+                    </div>
+
                     <!-- Contact -->
                     <div hidden="true">
-                        <h3 class="text-2xl font-semibold mb-4">9. Contact Us</h3>
+                        <h3 class="text-2xl font-semibold mb-4">10. Contact Us</h3>
                         <p class="text-muted mb-2">
                             For privacy-related inquiries, data access requests, or to exercise your rights, contact us
                             at:
                         </p>
-                        <p class="text-muted">
+                        <p class="text-muted mt-4">
                             <strong>Email:</strong> privacy@volcanosoftware.com<br>
                             <strong>Address:</strong> Volcano Software Inc., Software Innovation Hub, Tech City<br>
                             <strong>Data Protection Officer:</strong> dpo@volcanosoftware.com
@@ -730,6 +752,34 @@
             }
         }
 
+        // Handle hash fragments on page load
+        function handleHashFragment() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetId = hash.substring(1); // Remove the #
+                const target = document.getElementById(targetId);
+                if (target) {
+                    const privacyContent = document.getElementById('privacy-content');
+                    // Check if target is inside privacy-content
+                    if (privacyContent && privacyContent.contains(target)) {
+                        // Ensure privacy section is visible
+                        if (!privacyContent.classList.contains('visible')) {
+                            privacyContent.classList.add('visible');
+                            document.getElementById('privacy-toggle').textContent = 'Hide Details';
+                        }
+                    }
+                    // Scroll to bottom of target section
+                    setTimeout(() => {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                    }, 100);
+                }
+            }
+        }
+
+        // Handle hash on page load and when hash changes
+        document.addEventListener('DOMContentLoaded', handleHashFragment);
+        window.addEventListener('hashchange', handleHashFragment);
+
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -738,6 +788,15 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) {
+                        // Check if target is inside privacy-content
+                        const privacyContent = document.getElementById('privacy-content');
+                        if (privacyContent && privacyContent.contains(target)) {
+                            // Ensure privacy section is visible
+                            if (!privacyContent.classList.contains('visible')) {
+                                privacyContent.classList.add('visible');
+                                document.getElementById('privacy-toggle').textContent = 'Hide Details';
+                            }
+                        }
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }
